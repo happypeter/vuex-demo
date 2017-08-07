@@ -1,12 +1,26 @@
 <template>
   <div class="comment-box">
-    comment-box
+    <ul>
+      <li v-for="comment in comments">
+        {{ comment.text }}
+      </li>
+    </ul>
   </div>
 </template>
 
 <script>
   export default {
-    name: 'comment-box'
+    name: 'comment-box',
+    data: () => ({
+      comments: [
+        {
+          text: 'hello git'
+        },
+        {
+          text: 'hello vuejs'
+        }
+      ]
+    })
   }
 </script>
 

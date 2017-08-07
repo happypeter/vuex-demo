@@ -1,18 +1,17 @@
 <template>
-  <div class="post-body">
-    Postbody
+  <div class="comment-box">
+    comment-box
   </div>
 </template>
 
 <script>
   export default {
-    name: 'post-body'
+    name: 'comment-box'
   }
 </script>
 
-
 <style scoped>
-  .post-body {
+  .comment-box {
     background-color: #fff;
     box-shadow: 0 1px 2px rgba(0, 0, 0, .5);
     width: 80%;

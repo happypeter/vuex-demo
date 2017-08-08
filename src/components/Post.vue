@@ -1,7 +1,7 @@
 <template>
   <div class="post">
     <div class="upper">
-      <post-body postId="1234"></post-body>
+      <post-body v-bind:postId="myId"></post-body>
     </div>
     <div class="bottom">
       <comment-box></comment-box>
@@ -15,7 +15,12 @@
 
   export default {
     name: 'post',
-    components: { PostBody, CommentBox }
+    components: { PostBody, CommentBox },
+    data: function () {
+      return {
+        myId: '1256'
+      }
+    }
   }
 </script>
 

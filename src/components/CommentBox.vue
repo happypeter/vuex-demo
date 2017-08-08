@@ -33,9 +33,11 @@
     methods: {
       addComment: function () {
         console.log('button click...')
-        const text = document.getElementById('commentForm').value
-        this.comments.push({ text })
-        document.getElementById('commentForm').value = ''
+        const input = document.getElementById('commentForm')
+        if (input.value !== '') {
+          this.comments.push({ text: input.value })
+          input.value = ''
+        }
       }
     }
   }

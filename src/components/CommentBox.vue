@@ -2,7 +2,7 @@
   <div class="comment-box">
     <div class="form">
       <input type="text" id="commentForm" />
-      <button type="submit">发布</button>
+      <button v-on:click="addComment" type="submit">发布</button>
     </div>
     <ul>
       <li v-for="comment in comments">
@@ -24,7 +24,12 @@
           text: 'hello vuejs'
         }
       ]
-    })
+    }),
+    methods: {
+      addComment: function () {
+        console.log('button click...')
+      }
+    }
   }
 </script>
 

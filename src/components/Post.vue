@@ -1,7 +1,7 @@
 <template>
   <div class="post">
     <div class="upper">
-      <post-body v-bind:postId="myId"></post-body>
+      <post-body :postId="postId"></post-body>
     </div>
     <div class="bottom">
       <comment-box></comment-box>
@@ -16,9 +16,9 @@
   export default {
     name: 'post',
     components: { PostBody, CommentBox },
-    data: function () {
-      return {
-        myId: '1256'
+    computed: {
+      postId: function () {
+        return this.$route.params.id
       }
     }
   }

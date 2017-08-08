@@ -1,5 +1,9 @@
 <template>
   <div class="comment-box">
+    <div class="form">
+      <input type="text" id="commentForm" />
+      <button type="submit">发布</button>
+    </div>
     <ul>
       <li v-for="comment in comments">
         {{ comment.text }}
@@ -32,5 +36,35 @@
     margin: 30px auto;
     padding: 20px;
     line-height: 1.8;
+   }
+   li {
+     border-bottom: 1px solid rgba(0, 0, 0, .2);
+     margin-bottom: 10px;
+   }
+
+   .form {
+     display: flex;
+     margin-bottom: 10px;
+   }
+   button {
+     background-color: deeppink;
+     color: white;
+     border: 0;
+     outline: 0;
+     line-height: 20px;
+     padding: 5px 20px;
+     margin: 0 0 0 10px;
+   }
+
+   button:hover {
+     cursor: pointer;
+   }
+
+   input {
+     height: 30px;
+     line-height: 30px;
+     text-indent: 5px;
+     display: flex;
+     flex-grow: 1;
    }
 </style>

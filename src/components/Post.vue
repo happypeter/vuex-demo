@@ -1,7 +1,7 @@
 <template>
   <div class="post">
     <div class="upper">
-      <post-body></post-body>
+      <post-body postId="1234"></post-body>
     </div>
     <div class="bottom">
       <comment-box></comment-box>

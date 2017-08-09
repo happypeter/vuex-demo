@@ -5,7 +5,7 @@
       <button v-on:click="addComment" type="submit">发布</button>
     </div>
     <ul>
-      <li v-for="comment in comments">
+      <li v-for="comment in reversedComments">
         {{ comment.text }}
       </li>
     </ul>
@@ -13,6 +13,8 @@
 </template>
 
 <script>
+  import * as types from '../store/mutation-types'
+
   export default {
     name: 'comment-box',
     computed: {
@@ -25,12 +27,9 @@
     },
     methods: {
       addComment: function () {
-        console.log('button click...')
         const input = document.getElementById('commentForm')
-        if (input.value !== '') {
-          this.comments.push({ text: input.value })
-          input.value = ''
-        }
+        this.$store.commit(types.ADD_COMMENT, { text: input.value })
+        input.value = ''
       }
     }
   }

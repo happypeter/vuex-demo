@@ -5,7 +5,7 @@
       <button v-on:click="addComment" type="submit">发布</button>
     </div>
     <ul>
-      <li v-for="comment in reversedComments">
+      <li v-for="comment in comments">
         {{ comment.text }}
       </li>
     </ul>
@@ -15,19 +15,12 @@
 <script>
   export default {
     name: 'comment-box',
-    data: () => ({
-      comments: [
-        {
-          text: 'hello git'
-        },
-        {
-          text: 'hello vuejs'
-        }
-      ]
-    }),
     computed: {
       reversedComments: function () {
         return this.comments.slice().reverse()
+      },
+      comments: function () {
+        return this.$store.state.comment.all
       }
     },
     methods: {

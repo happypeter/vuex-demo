@@ -1,13 +1,18 @@
 <template>
   <div class="post-body">
-    {{ postId }}
+    {{ commentNo }} 评论
   </div>
 </template>
 
 <script>
   export default {
     name: 'post-body',
-    props: ['postId']
+    props: ['postId'],
+    computed: {
+      commentNo: function () {
+        return this.$store.state.comment.all.length
+      }
+    }
   }
 </script>
 

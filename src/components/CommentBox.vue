@@ -30,9 +30,6 @@
         this.$store.commit(types.ADD_COMMENT, { text: input.value })
         input.value = ''
       }
-    },
-    created () {
-      this.$store.dispatch('getAllPosts')
     }
   }
 </script>

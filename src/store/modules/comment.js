@@ -1,4 +1,5 @@
 import * as types from '../mutation-types'
+import comment from '../../api/comment'
 
 let state = {}
 
@@ -8,7 +9,16 @@ const mutations = {
   }
 }
 
+const actions = {
+  getAllPosts ({ commit }) {
+    comment.getComments(posts => {
+      console.log('in actions', posts)
+    })
+  }
+}
+
 export default {
   state,
-  mutations
+  mutations,
+  actions
 }

@@ -5,7 +5,7 @@
       <button v-on:click="addComment" type="submit">发布</button>
     </div>
     <ul>
-      <li v-for="comment in comments">
+      <li v-for="comment in reversedComments">
         {{ comment.text }}
       </li>
     </ul>

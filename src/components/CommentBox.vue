@@ -5,7 +5,7 @@
       <button v-on:click="addComment" type="submit">发布</button>
     </div>
     <ul>
-      <li v-for="comment in reversedComments">
+      <li v-for="comment in comments">
         {{ comment.text }}
       </li>
     </ul>
@@ -14,7 +14,7 @@
 
 <script>
   import * as types from '../store/mutation-types'
-
+  import comment from '../api/comment'
   export default {
     name: 'comment-box',
     computed: {
@@ -31,6 +31,11 @@
         this.$store.commit(types.ADD_COMMENT, { text: input.value })
         input.value = ''
       }
+    },
+    created () {
+      comment.getComments(posts => {
+        console.log('created', posts)
+      })
     }
   }
 </script>

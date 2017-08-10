@@ -1,11 +1,6 @@
 import * as types from '../mutation-types'
 
-const state = {
-  all: [
-    { text: 'fooo' },
-    { text: 'barr' }
-  ]
-}
+let state = {}
 
 const mutations = {
   [types.ADD_COMMENT] (state, { text }) {
